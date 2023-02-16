@@ -1,9 +1,15 @@
 #include<stdio.h>
 
-int main()
+
+/**
+ * main - Entry point 
+ *
+ * Return Always 0 (Success)
+*/
+int main(void)
 
 {
-		//string manipulation
+	
 	char str[] = ("\"Programming is like building a multilingual puzzle\n");
 	puts(str);
 	return 0;
