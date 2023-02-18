@@ -3,7 +3,7 @@
 #include <time.h>
 
 /**
- * main - prints all single digit numbers of base 10 starting from 0 using putchar
+ * main - prints all single digit numbers of base 10 from 0 using putchar
  *
  * Return: Always 0 (Success)
  */
