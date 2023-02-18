@@ -1,17 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main -lower alphabet
+ * main - outline lower  alphabet case
  *
- * Return:Always 0 (Success)
+ * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	char ch = 'a';
-	while (ch <= 'z')
-	{
-		putchar("%c", ch);
-		ch++;
-	}
+	char ch;
+
+	for (ch = 'a'; ch <= 'z'; ch++)
+		putchar(ch);
+	putchar('\n');
+
 	return (0);
 }
