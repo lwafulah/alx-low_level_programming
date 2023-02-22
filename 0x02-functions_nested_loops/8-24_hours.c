@@ -15,6 +15,7 @@ void jack_bauer(void)
 			int j = hours % 10;
 			int k = minutes / 10;
 			int l = minutes % 10;
+
 			_putchar('0' + i);
 			_putchar('0' + j);
 			_putchar(':');
