@@ -8,7 +8,13 @@
 int add(int num1, int num2)
 {
 	int sum = num1 + num2;
+	int s = sum % 10;
+	int t = sum / 10;
 
-	_putchar(sum + '0');
+	if (t > 0)
+	{
+		_putchar(t + '0');
+	}
+	_putchar(s + '0');
 	return (sum);
 }
