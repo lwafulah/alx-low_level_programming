@@ -2,7 +2,7 @@
 /**
  * print_last_digit - prints the last digit of a number
  * @n: parameter to be tested
- * Return: last_digit
+ * Return: always n
  */
 int print_last_digit(int n)
 {
