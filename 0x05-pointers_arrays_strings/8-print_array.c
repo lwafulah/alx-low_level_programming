@@ -3,22 +3,20 @@
 /**
  * print_array - prints n elements of an array of integers
  * @n: number of elements of the array to be printed
- * @a: the integer to be tested
+ * @a: array to be printed
  * Return: 0 on success
  */
 void print_array(int *a, int n)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; i < n; i++)
+	while (i < n)
 	{
-		if (i != n - 1)
-		{
-			printf("%d, ", a[i]);
-		}
-		else
-		{
-			printf("%d\n", a[i]);
-		}
+		printf("%d", a[i]);
+
+		if (i != (n - 1))
+			printf(", ");
+		i++;
 	}
+	printf("\n");
 }
