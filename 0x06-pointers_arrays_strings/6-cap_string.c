@@ -1,22 +1,30 @@
 #include "main.h"
 /**
  * *cap_string - capitalizes all words of a string
- * @str: - string to be used
+ * @s: - string to be used
  * Return: 0 on success
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	for (int i = 0; str[i] != '\0'; i++)
+	int i;
+
+	if (s[0] >= 'a' && s[0] <= 'z')
 	{
-		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == ','
-				|| str[i] == ';' || str[i] == '.' || str[i] == '!' || str[i] == '?'
-				|| str[i] == '"' || str[i] == '(' || str[i] == ')' || str[i] == '{'
-				|| str[i] == '}')
+		s[0] -= 32;
+	}
+	for (i = 1; s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' || s[i] == ',' ||
+			 s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?' ||
+			 s[i] == '"' || s[i] == '(' || s[i] == ')' || s[i] == '{' ||
+			 s[i] == '}')
 		{
-			i++;
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = str[i] - 32;
+			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			{
+				s[i + 1] -= 32;
+			}
 		}
 	}
-	return (str);
+	return (s);
 }
+
