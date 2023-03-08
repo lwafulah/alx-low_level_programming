@@ -2,7 +2,6 @@
 /**
  * _sqrt_recursion - function that returns the natural square root of a number
  * @n: integer
- * @i: integer
  * Return: integer
  */
 int _sqrt_recursion(int n)
