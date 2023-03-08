@@ -14,7 +14,7 @@ int findSqrt(int n, int i);
 int is_palindrome(char *s);
 int _strlen_recursion(char *s);
 int checkPalindrome(char *s, int start, int end);
-
+int wildcmp(char *s1, char *s2);
 
 
 
