@@ -7,11 +7,11 @@
  */
 void print_binary(unsigned long int n)
 {
-	if (n == 0)
-		return (0);
-
 	int count;
 	unsigned long int mask;
+
+	if (n == 0)
+		return;
 
 	mask = n;
 	count = 0;
