@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <elf.h>
-
+#include "main.h"
 /**
  * print_error - Prints an error message to
  * stderr and exits with status code 98
