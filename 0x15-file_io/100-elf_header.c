@@ -14,26 +14,40 @@ void print_error(char *message)
  * print_elf_header - Prints the information contained in the ELF header.
  * @header: A pointer to the ELF header.
  */
+
 void print_elf_header(Elf64_Ehdr *header)
 {
 	int i;
+	char *class;
+	char *data;
+	char *version;
+	char *osabi;
 
 	printf("ELF Header:\n");
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 		printf("%02x ", header->e_ident[i]);
 	printf("\n");
-	printf("  Class:%s\n",
-			header->e_ident[EI_CLASS] == ELFCLASS64 ? "ELF64" : "ELF32");
-	printf("  Data:%s\n",
-			header->e_ident[EI_DATA] == ELFDATA2LSB ? "2's comp., l.end." : "2's comp., big end.");
-	printf("  Version:%d (current)\n", header->e_ident[EI_VERSION]);
+
+	if (header->e_ident[EI_CLASS] == ELFCLASS64)
+		class = "ELF64";
+	else
+		class = "ELF32";
+	printf("  Class:%s\n", class);
+
+	if (header->e_ident[EI_DATA] == ELFDATA2LSB)
+		data = "2's comp., l.end.";
+	else
+		data = "2's comp., big end.";
+	printf("  Data:%s\n", data);
+
+	version = "current";
+	printf("  Version:%d (%s)\n", header->e_ident[EI_VERSION], version);
 	printf("  OS/ABI:%d\n", header->e_ident[EI_OSABI]);
 	printf("  ABI Version:%d\n", header->e_ident[EI_ABIVERSION]);
 	printf("  Type:%d\n", header->e_type);
 	printf("  Entry point address:0x%lx\n", header->e_entry);
 }
-
 /**
  * main - Entry point for the program.
  * @argc: The number of command-line arguments.
